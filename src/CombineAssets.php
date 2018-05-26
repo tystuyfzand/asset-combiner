@@ -13,6 +13,7 @@ use File;
 use Request;
 use Response;
 use Route;
+use Storage;
 
 /**
  * Combiner class used for combining JavaScript and StyleSheet files.
