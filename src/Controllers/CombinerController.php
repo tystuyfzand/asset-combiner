@@ -2,6 +2,7 @@
 
 namespace AssetCombiner\Controllers;
 
+use Illuminate\Routing\Controller;
 use AssetCombiner\CombineAssets;
 
 class CombinerController extends Controller {
