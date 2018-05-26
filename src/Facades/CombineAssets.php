@@ -1,6 +1,6 @@
 <?php
 
-namespace AssetCombiner\Facades\CombineAssets;
+namespace AssetCombiner\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
