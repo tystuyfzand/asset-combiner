@@ -98,7 +98,7 @@ class CombineAssets {
     /**
      * Constructor
      */
-    public function init() {
+    public function __construct() {
         /*
          * Register preferences
          */
