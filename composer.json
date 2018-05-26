@@ -15,6 +15,11 @@
         "leafo/scssphp": "^0.7.5",
         "kriswallsmith/assetic": "^1.4"
     },
+    "autoload": {
+        "psr-4": {
+            "AssetCombiner\\": "src/"
+        }
+    },
     "suggest": {
         "matthiasmullie/minify": "Minify Javascript output"
     },
