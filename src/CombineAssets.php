@@ -1,7 +1,5 @@
 <?php namespace AssetCombiner;
 
-use AssetCombiner\Assetic\LessCompiler;
-use AssetCombiner\Assetic\ScssCompiler;
 use AssetCombiner\Cache\FilesystemCache;
 use Assetic\Asset\AssetCache;
 use Assetic\Asset\AssetCollection;
