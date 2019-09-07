@@ -4,11 +4,11 @@ use Assetic\Asset\AssetInterface;
 use Assetic\Factory\AssetFactory;
 use Assetic\Filter\DependencyExtractorInterface;
 use Assetic\Filter\HashableInterface;
-use Assetic\Filter\ScssphpFilter;
+use AssetCombiner\Assetic\Filter\ScssphpFilter;
 use Event;
 
 /**
- * Less.php Compiler Filter
+ * ScssPhp Compiler Filter
  * Class used to compiled stylesheet less files, not using leafo!
  *
  * @package october/parse

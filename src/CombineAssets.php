@@ -1,5 +1,7 @@
 <?php namespace AssetCombiner;
 
+use AssetCombiner\Assetic\LessCompiler;
+use AssetCombiner\Assetic\ScssCompiler;
 use AssetCombiner\Cache\FilesystemCache;
 use Assetic\Asset\AssetCache;
 use Assetic\Asset\AssetCollection;
@@ -125,8 +127,14 @@ class CombineAssets {
          */
         $this->registerFilter('css', new \Assetic\Filter\CssImportFilter);
         $this->registerFilter([ 'css', 'less', 'scss' ], new \Assetic\Filter\CssRewriteFilter);
-        $this->registerFilter('less', new Assetic\LessCompiler);
-        $this->registerFilter('scss', new Assetic\ScssCompiler);
+
+        if (class_exists('Less_Parser')) {
+            $this->registerFilter('less', new Assetic\LessCompiler);
+        }
+
+        if (class_exists('ScssPhp\ScssPhp\Compiler')) {
+            $this->registerFilter('scss', new Assetic\ScssCompiler);
+        }
 
         /*
          * Minification filters
