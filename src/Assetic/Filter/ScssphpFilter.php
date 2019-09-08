@@ -13,6 +13,7 @@ namespace AssetCombiner\Assetic\Filter;
 
 use Assetic\Asset\AssetInterface;
 use Assetic\Factory\AssetFactory;
+use Assetic\Filter\DependencyExtractorInterface;
 use Assetic\Util\CssUtils;
 use ScssPhp\ScssPhp\Compiler;
 
