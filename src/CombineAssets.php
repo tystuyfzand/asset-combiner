@@ -1,6 +1,8 @@
 <?php namespace AssetCombiner;
 
 use AssetCombiner\Cache\FilesystemCache;
+use AssetCombiner\Events\BeforePrepare;
+use AssetCombiner\Events\GetCacheKey;
 use Assetic\Asset\AssetCache;
 use Assetic\Asset\AssetCollection;
 use Assetic\Asset\FileAsset;
@@ -8,7 +10,6 @@ use Assetic\Factory\AssetFactory;
 use Config;
 use Cache;
 use DateTime;
-use Event;
 use File;
 use Request;
 use Response;
@@ -402,7 +403,7 @@ class CombineAssets {
         /*
          * Extensibility
          */
-        Event::fire('cms.combiner.beforePrepare', [ $this, $assets ]);
+        event(new BeforePrepare($this, $assets));
 
         $files = [];
         $filesSalt = null;
@@ -794,9 +795,9 @@ class CombineAssets {
         /*
          * Extensibility
          */
-        $dataHolder = (object)[ 'key' => $cacheKey ];
-        Event::fire('cms.combiner.getCacheKey', [ $this, $dataHolder ]);
-        $cacheKey = $dataHolder->key;
+        $event = new GetCacheKey($this, $cacheKey);
+        event($event);
+        $cacheKey = $event->cacheKey;
 
         return md5($cacheKey);
     }
