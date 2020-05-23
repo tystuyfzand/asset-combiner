@@ -15,7 +15,7 @@ class StylesheetMinify implements FilterInterface {
     }
 
     public function filterDump(AssetInterface $asset) {
-        $minify = new Minify\Css($asset->getContent());
+        $minify = new Minify\CSS($asset->getContent());
 
         $asset->setContent($minify->minify());
     }
