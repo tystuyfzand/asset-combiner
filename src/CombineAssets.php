@@ -11,6 +11,7 @@ use Config;
 use Cache;
 use DateTime;
 use File;
+use Illuminate\Support\Arr;
 use Request;
 use Response;
 use Route;
@@ -243,9 +244,9 @@ class CombineAssets {
         /*
          * Analyse cache information
          */
-        $lastModifiedTime = gmdate("D, d M Y H:i:s \G\M\T", array_get($cacheInfo, 'lastMod'));
-        $etag = array_get($cacheInfo, 'etag');
-        $mime = (array_get($cacheInfo, 'extension') == 'css')
+        $lastModifiedTime = gmdate("D, d M Y H:i:s \G\M\T", Arr::get($cacheInfo, 'lastMod'));
+        $etag = Arr::get($cacheInfo, 'etag');
+        $mime = (Arr::get($cacheInfo, 'extension') == 'css')
             ? 'text/css'
             : 'application/javascript';
 
