@@ -11,7 +11,7 @@
     ],
     "require": {
         "illuminate/support": "~5.0|~6.0|~7.0|~8.0",
-        "kriswallsmith/assetic": "^1.4"
+        "assetic/framework": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -20,7 +20,7 @@
     },
     "suggest": {
         "matthiasmullie/minify": "Minify Javascript output",
-        "oyejorge/less.php": "Less PHP Compiler",
+        "wikimedia/less.php": "Less PHP Compiler",
         "scssphp/scssphp": "SCSS PHP Compiler"
     },
     "extra": {
